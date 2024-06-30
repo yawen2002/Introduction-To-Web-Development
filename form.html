@@ -1,0 +1,102 @@
+<html>
+<head>
+    <title> Form </title>
+    <style>
+        body
+        {
+            margin: 0px;
+        }
+        #infoForm
+        {
+            background-color: rgb(200, 200, 200);
+            width: 300px;
+            padding: 5px;
+            border: 8px dashed black;
+            font-size: .85em;
+            margin-top: 10px;
+            margin-left: 3px;
+        }
+        
+        #infoForm p
+        {
+            margin-top: 4px;
+            margin-bottom: 4px;
+        }
+    </style>
+    
+    <script>
+        var email;
+        var first;
+        var last;
+        // Run when the window loads:
+        window.onload = function()
+        {
+            // Get the elements we are going to deal with, and put them in local variables. We need to get those out of html and set those to variables in JS.
+            first = document.getElementById('first');
+            last = document.getElementById('last');
+            email = document.getElementById('email');
+            
+            first.addEventListener('blur', firstBlur, false);
+            last.addEventListener('blur', lastBlur, false);
+            email.addEventListener('blur', emailBlur, false);
+        }
+        
+        function firstBlur()
+        {
+            // alert("firstBlur");
+            if(first.value == "" || first.value == null)
+                {
+                    // alert("You need to supply a first name");
+                    first.style.backgroundColor = "#FF0000";
+                }
+            else
+                {
+                    first.style.backgroundColor = "#FFFFFF";
+                }
+        }
+        function emailBlur()
+        {
+            // alert("firstBlur");
+            if(email.value == "" || email.value == null)
+                {
+                    // alert("You need to supply a first name");
+                    email.style.backgroundColor = "#FF0000";
+                }
+            else
+                {
+                    email.style.backgroundColor = "#FFFFFF";
+                }
+        }
+        function lastBlur()
+        {
+            // alert("firstBlur");
+            if(last.value == "" || last.value == null)
+                {
+                    // alert("You need to supply a first name");
+                    last.style.backgroundColor = "#FF0000";
+                }
+            else
+                {
+                    last.style.backgroundColor = "#FFFFFF";
+                }
+        }
+    </script>
+</head>
+<body>
+<div id="infoForm">
+    <p> Please provide your name and email address to be eligible for some fabulous prizes! You may only enter once and you don't need to be present to win! </p>
+    
+    <form action="#" method="post">
+    <label for="first"> First </label>
+    <input type="first" id="first" name="first" />
+    <br/>
+    <label for="last"> Last </label>
+    <input type="last" id="last" name="last" />
+    <br/>
+    <label for="email"> Email </label>
+    <input type="email" id="email" name="email" />
+    <br/>
+    <button type="submit"> Submit </button>
+    </form>
+    </div>
+</body>
